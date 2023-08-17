@@ -3,7 +3,7 @@ import './Footer.scss';
 const Footer = () => {
   return (
     <div className="footer">
-      <p>MovieAle &copy; </p>
+      <p>MovieAle &copy; 2023 </p>
     </div>
   );
 };

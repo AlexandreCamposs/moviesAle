@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './Home.scss';
 
 import { useEffect, useState } from 'react';
 import Message from '../components/Message';
@@ -34,9 +35,12 @@ const Home = () => {
 
   return (
     <>
-      {movies.length === 0 && <Message msg="Carregando" />}
-      {movies.length > 0 &&
-        movies.map((movie) => <CardMovie key={movie.id} movie={movie} />)}
+      <h1>Bem-Vindo(a).</h1>
+      <div className="movies-container">
+        {movies.length === 0 && <Message msg="Carregando..." />}
+        {movies.length > 0 &&
+          movies.map((movie) => <CardMovie key={movie.id} movie={movie} />)}
+      </div>
     </>
   );
 };

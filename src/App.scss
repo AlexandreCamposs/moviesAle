@@ -1,13 +1,10 @@
 .container-app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
+  min-height: 85vh;
 }
+
 h1 {
   font-size: 2.5rem;
+  color: #032541;
   text-align: center;
-  padding: 2rem;
+  margin-top: 2rem;
 }
