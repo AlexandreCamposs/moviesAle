@@ -1,16 +1,13 @@
-import axios from 'axios';
 import './Home.scss';
 
 import { useEffect, useState } from 'react';
 import Message from '../../components/Message/Message';
 import CardMovie from '../../components/CardMovies/CardMovie';
+import { url, key } from '../../config/utils';
 
-const moviesURL = 'https://api.themoviedb.org/3/movie/';
-const apiKey = 'api_key=b0f5d1365c0992a122ac5c399cad0fad';
+const moviesURL = url;
+const apiKey = key;
 const topRatedUrl = `${moviesURL}top_rated?${apiKey}`;
-
-console.log(moviesURL);
-console.log(apiKey);
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -18,16 +15,13 @@ const Home = () => {
   const getUrl = async (url) => {
     try {
       const res = await fetch(url);
-      console.log(res);
-      const data = await res.json();
-      console.log(data);
+      const data = await res.json().catch((err) => err);
 
       setMovies(data.results);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(movies);
 
   useEffect(() => {
     getUrl(topRatedUrl);

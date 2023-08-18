@@ -4,15 +4,11 @@ import CardMovie from '../../components/CardMovies/CardMovie';
 import Message from '../../components/Message/Message';
 import './Search.scss';
 
-const moviesURL = 'https://api.themoviedb.org/3/search/movie';
-const searchMovie = '&include_adult=false&language=en-US&page=1';
-const acessToken = {
-  headers: {
-    accept: 'application/json',
-    Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMGY1ZDEzNjVjMDk5MmExMjJhYzVjMzk5Y2FkMGZhZCIsInN1YiI6IjY0YjFkNGE0MGJiMDc2MDBlYjI4M2ExNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GOIenz69kJtT4avuMza_0hn-xkeQlg9XW0eNbE0t6Tk',
-  },
-};
+import { urlSearch, urlfull, acess } from '../../config/utils';
+
+const moviesURL = urlSearch;
+const searchMovie = urlfull;
+const acessToken = acess;
 
 const Search = () => {
   const [searchParams] = useSearchParams();

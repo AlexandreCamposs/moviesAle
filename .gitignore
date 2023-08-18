@@ -6,7 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-.env
+
+.env                # carregado em todos casos
+.env.local          # carregado em todos casos, mas ignorado pelo git
+.env.[mode]         # carregado apenas em um modo especificado
+.env.[mode].local   # carregado apenas em um modo especificado, mas ignorado pelo git
 
 node_modules
 dist

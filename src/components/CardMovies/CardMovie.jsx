@@ -8,6 +8,7 @@ const CardMovie = ({ movie, showLink = true }) => {
   const formatVote = (vote) => {
     return parseFloat(vote.toFixed(1));
   };
+
   return (
     <div className="card-movie ">
       <img src={img + movie.poster_path} />

@@ -1,6 +1,6 @@
+import CardMovie from '../../components/CardMovies/CardMovie';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import CardMovie from '../../components/CardMovies/CardMovie';
 import { Link } from 'react-router-dom';
 import {
   BsGraphUp,
@@ -8,9 +8,10 @@ import {
   BsHourglassSplit,
   BsFillFileEarmarkTextFill,
 } from 'react-icons/bs';
+import { url, key } from '../../config/utils';
 
-const moviesURL = 'https://api.themoviedb.org/3/movie/';
-const apiKey = 'api_key=b0f5d1365c0992a122ac5c399cad0fad';
+const moviesURL = url;
+const apiKey = key;
 
 const Movie = () => {
   const { id } = useParams();

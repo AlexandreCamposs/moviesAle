@@ -1,7 +1,7 @@
+import './NavBar.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { BiCameraMovie, BiSearchAlt2 } from 'react-icons/bi';
 import { BiAdjust } from 'react-icons/bi';
-import './NavBar.scss';
 import { useState } from 'react';
 
 const NavBar = ({ isDarkTheme, setIsDarkTheme }) => {
