@@ -10,15 +10,14 @@
   }
 }
 
-.movies-container div svg {
-  color: red;
-}
-
-.container .title {
-  text-align: center;
-  margin: 2rem 0;
-  font-size: 2.5rem;
-  span {
-    color: #032541;
+@media (max-width: 420px) {
+  .movies-container {
+    .card-movie {
+      width: 100%;
+    }
+  }
+  .card-container {
+    padding: 1rem;
+    width: 85% !important;
   }
 }

@@ -2,8 +2,8 @@ import axios from 'axios';
 import './Home.scss';
 
 import { useEffect, useState } from 'react';
-import Message from '../components/Message';
-import CardMovie from '../components/CardMovie';
+import Message from '../../components/Message/Message';
+import CardMovie from '../../components/CardMovies/CardMovie';
 
 const moviesURL = 'https://api.themoviedb.org/3/movie/';
 const apiKey = 'api_key=b0f5d1365c0992a122ac5c399cad0fad';

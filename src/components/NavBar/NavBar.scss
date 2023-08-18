@@ -6,16 +6,30 @@
   padding: 1rem 2rem;
   margin: 0 auto;
   background-color: #032541;
-
-  .logo h2 a {
+  .logo {
     display: flex;
     align-items: center;
-    font-size: 2.2rem;
-    text-decoration: none;
-    color: #fff;
+    h2 a {
+      display: flex;
+      align-items: center;
+      font-size: 2.2rem;
+      text-decoration: none;
+      color: #fff;
 
-    svg {
-      margin-right: 0.5rem;
+      svg {
+        margin-right: 0.5rem;
+      }
+    }
+    .theme {
+      display: flex;
+      margin-left: 1rem;
+      font-size: 2rem;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      svg {
+        color: #fff;
+      }
     }
   }
 
@@ -35,10 +49,19 @@
       padding: 0.5rem;
       border-radius: 5px;
       font-size: 1.5rem;
-      color: #17191f;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    .logo {
+      padding: 0.5rem;
     }
   }
 }

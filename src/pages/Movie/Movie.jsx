@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import CardMovie from '../components/CardMovie';
+import CardMovie from '../../components/CardMovies/CardMovie';
 import { Link } from 'react-router-dom';
 import {
   BsGraphUp,

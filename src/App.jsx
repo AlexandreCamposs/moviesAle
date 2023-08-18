@@ -1,28 +1,34 @@
 import './App.scss';
+import { ThemeProvider } from 'styled-components';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import Movie from './pages/Movie';
-import Footer from './pages/Footer';
-import Search from './pages/Search';
+import NavBar from './components/NavBar/NavBar';
+import Home from './pages/Home/Home';
+import Movie from './pages/Movie/Movie';
+import Footer from './components/Footer/Footer';
+import Search from './pages/Search/Search';
+
+import { darkTheme } from './Themes/Themes';
+import { GlobalStyles } from './Themes/GlobalStyles';
 
 function App() {
   return (
-    <div className="app">
-      <BrowserRouter>
-        <NavBar />
-
-        <div className="container-app">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="movie/:id" element={<Movie />} />
-            <Route path="search" element={<Search />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-      <Footer />
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <GlobalStyles />
+      <div className="app">
+        <BrowserRouter>
+          <NavBar />
+          <div className="container-app">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="movie/:id" element={<Movie />} />
+              <Route path="search" element={<Search />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

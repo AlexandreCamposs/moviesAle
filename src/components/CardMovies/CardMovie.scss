@@ -34,7 +34,6 @@
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
   margin: 0;
 }
 
@@ -42,7 +41,7 @@
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 5px;
-  width: 50%;
+  width: 35%;
   background-color: #032541;
   h2 {
     color: #fff;
@@ -89,3 +88,9 @@
     color: #032541;
   }
 }
+
+// @media (max-width: 420px) {
+//   .card-container {
+//     width: 90%;
+//   }
+// }

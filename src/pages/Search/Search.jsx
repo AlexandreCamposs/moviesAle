@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import CardMovie from '../components/CardMovie';
-import Message from '../components/Message';
+import CardMovie from '../../components/CardMovies/CardMovie';
+import Message from '../../components/Message/Message';
+import './Search.scss';
 
 const moviesURL = 'https://api.themoviedb.org/3/search/movie';
 const searchMovie = '&include_adult=false&language=en-US&page=1';
@@ -26,9 +27,16 @@ const Search = () => {
       const data = await res.json();
       console.log(data);
 
-      console.log(data);
+      const arrayFilter = data.results.filter((obj) => {
+        for (let chave in obj) {
+          if (obj[chave] === null || obj[chave] === undefined) {
+            return false;
+          }
+        }
+        return true;
+      });
 
-      setMovies(data.results);
+      setMovies(arrayFilter);
     } catch (error) {
       console.log(error);
     }
@@ -36,16 +44,20 @@ const Search = () => {
   console.log(movies);
 
   useEffect(() => {
-    const x = `${moviesURL}?query=${query}${searchMovie}`;
-    getSearch(x, acessToken);
-    console.log(x);
+    const urlSearch = `${moviesURL}?query=${query}${searchMovie}`;
+    getSearch(urlSearch, acessToken);
+    console.log(urlSearch);
   }, [query]);
 
   return (
-    <div className="container">
-      <h2 className="title">
-        Resultados para: <span className="query-text">{query}</span>
-      </h2>
+    <div className="container-search">
+      <div className="title">
+        <h2>
+          Resultados para:<span className="query">{query},</span>
+          {movies.length} filmes encontrados.
+        </h2>
+      </div>
+      <span className="query-text"> .</span>
       <div className="movies-container">
         {movies.length === 0 && <Message msg="Carregando..." />}
         {movies.length > 0 &&
