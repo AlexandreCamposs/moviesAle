@@ -1,3 +1,5 @@
+@import '../../Themes/colors.scss';
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -5,7 +7,7 @@
   align-items: center;
   padding: 1rem 2rem;
   margin: 0 auto;
-  background-color: #032541;
+  background-color: $backgroundL;
   .logo {
     display: flex;
     align-items: center;
@@ -14,7 +16,7 @@
       align-items: center;
       font-size: 2.2rem;
       text-decoration: none;
-      color: #fff;
+      color: $white;
 
       svg {
         margin-right: 0.5rem;
@@ -27,18 +29,25 @@
       border: none;
       background-color: transparent;
       cursor: pointer;
+
       svg {
-        color: #fff;
+        color: $white;
+      }
+      :hover {
+        background-color: $svgHover;
+        border-radius: 5px;
       }
     }
   }
 
   form {
     display: flex;
+    width: 350px;
     gap: 0.5rem;
 
     input {
-      padding: 0.5rem 5rem;
+      padding: 0 1rem;
+      width: 100%;
       border: none;
       border-radius: 5px;
     }

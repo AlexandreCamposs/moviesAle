@@ -1,10 +1,17 @@
+@import './Themes/styles.scss';
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
 .container-app {
   min-height: 85vh;
 }
 
 h1 {
   font-size: 2.5rem;
-  color: #032541;
+  color: $backgroundL;
   text-align: center;
   margin-top: 2rem;
+}
+
+img {
+  border-radius: 5px;
 }

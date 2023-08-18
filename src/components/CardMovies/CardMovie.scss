@@ -1,3 +1,5 @@
+@import '../../Themes/styles.scss';
+
 .card-movie {
   width: 30%;
   color: #fff;
@@ -5,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #032541;
+  background-color: $backgroundL;
   padding: 1rem;
   border-radius: 5px;
   img,
@@ -16,7 +18,7 @@
   p svg {
     font-size: 1.2rem;
     margin-right: 0.5rem;
-    color: #f7d354;
+    color: $yellow;
   }
   a {
     display: flex;
@@ -26,7 +28,7 @@
     border-radius: 5px;
     text-decoration: none;
     font-size: 1.5rem;
-    color: #032541;
+    color: $backgroundL;
   }
 }
 .card-container .card-movie {
@@ -44,11 +46,11 @@
   width: 35%;
   background-color: #032541;
   h2 {
-    color: #fff;
+    color: $white;
     margin-bottom: 1rem;
   }
   p {
-    color: #fff;
+    color: $white;
   }
   .inf {
     margin-bottom: 1rem;
@@ -58,7 +60,7 @@
     }
     svg {
       margin-right: 1rem;
-      color: #f7d354;
+      color: $yellow;
     }
   }
   .info-description {
@@ -66,7 +68,7 @@
       text-align: center;
     }
     svg {
-      color: #f7d354;
+      color: $yellow;
       margin: 0 auto;
     }
     p {
@@ -79,7 +81,7 @@
   a {
     margin-top: 1rem;
     display: flex;
-    background-color: #fff;
+    background-color: $white;
     justify-content: center;
     padding: 1rem 0;
     border-radius: 5px;
@@ -89,8 +91,18 @@
   }
 }
 
-// @media (max-width: 420px) {
-//   .card-container {
-//     width: 90%;
-//   }
-// }
+.movies-container .card-movie:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 1);
+}
+.card-container .card-movie:hover {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  box-shadow: none;
+}
+.card-container:hover {
+  box-shadow: 0px 0px 15px 6px rgba(0, 0, 0, 1);
+}

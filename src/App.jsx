@@ -8,16 +8,18 @@ import Movie from './pages/Movie/Movie';
 import Footer from './components/Footer/Footer';
 import Search from './pages/Search/Search';
 
-import { darkTheme } from './Themes/Themes';
+import { darkTheme, lightTheme } from './Themes/Themes';
 import { GlobalStyles } from './Themes/GlobalStyles';
+import { useState } from 'react';
 
 function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
       <div className="app">
         <BrowserRouter>
-          <NavBar />
+          <NavBar isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme} />
           <div className="container-app">
             <Routes>
               <Route path="/" element={<Home />} />

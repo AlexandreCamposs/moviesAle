@@ -1,16 +1,19 @@
+@import '../../Themes/colors.scss';
+
 .container-search .title {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 2rem 0 0 0;
   h2 {
-    color: #032541;
+    color: $backgroundL;
     font-size: 2.5rem;
     text-align: center;
   }
   .query {
-    color: #f7d354;
-    margin-left: 0.5rem;
+    color: $yellow;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .movies-length {
   }

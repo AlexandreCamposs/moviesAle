@@ -1,11 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { BiCameraMovie, BiSearchAlt2 } from 'react-icons/bi';
-import { MdDarkMode } from 'react-icons/md';
+import { BiAdjust } from 'react-icons/bi';
 import './NavBar.scss';
 import { useState } from 'react';
 
-const NavBar = () => {
+const NavBar = ({ isDarkTheme, setIsDarkTheme }) => {
   const [search, setSearch] = useState('');
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -26,11 +27,10 @@ const NavBar = () => {
             MoviesAle
           </Link>
         </h2>
-        <div className="form-container">
-          <button className="theme">
-            <MdDarkMode />
-          </button>
-        </div>
+        <button className="theme" onClick={() => setIsDarkTheme(!isDarkTheme)}>
+          <BiAdjust />
+        </button>
+        <div className="form-container"></div>
       </div>
       <form onSubmit={handleSubmit}>
         <input
